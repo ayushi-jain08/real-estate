@@ -23,7 +23,7 @@ const mongo = async() => {
 }
 mongo()
 
-const _dirname = path.resolve()
+const __dirname = path.resolve()
 
 const myMiddleware = (req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
@@ -48,10 +48,10 @@ app.use("/api/user", userRouter)
 app.use("/api/auth", authRouter)
 app.use("/api/listing", listing) 
 
-app.use(express.static(path.join(_dirname, '/frontend/dist')))
+app.use(express.static(path.join(__dirname, './frontend/dist')))
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(_dirname, 'frontend', 'dist', 'index.html'));
+  res.sendFile(path.join(__dirname, './frontend/dist/index.html'));
 })
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500
