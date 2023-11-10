@@ -26,7 +26,7 @@ mongo()
 const __dirname = path.resolve()
 
 const myMiddleware = (req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
+    res.setHeader("Access-Control-Allow-Origin", "https://peaceful-cassata-229eca.netlify.app");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type");
     next(); // Call next to pass control to the next middleware
 };
