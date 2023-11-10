@@ -32,7 +32,7 @@ const myMiddleware = (req, res, next) => {
 };
 app.use(cookieParser());
 app.use(cors({
-    origin: 'http://localhost:5173', // Allow requests from this origin
+    origin: 'https://peaceful-cassata-229eca.netlify.app', // Allow requests from this origin
     credentials: true // Allow credentials (cookies, authorization headers, etc.)
   }));
 
