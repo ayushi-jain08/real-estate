@@ -23,17 +23,18 @@ const mongo = async() => {
 }
 mongo()
 
-
-const myMiddleware = (req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://peaceful-cassata-229eca.netlify.app");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type");
-    next(); // Call next to pass control to the next middleware
-};
-app.use(cookieParser());
+// const __dirname = path.resolve()
 app.use(cors({
     origin: 'https://peaceful-cassata-229eca.netlify.app', // Allow requests from this origin
     credentials: true // Allow credentials (cookies, authorization headers, etc.)
   }));
+  const myMiddleware = (req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://gleaming-faun-41e954.netlify.app");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type");
+    next();
+  };
+app.use(cookieParser());
+
 
 app.use(myMiddleware);
 app.use(bodyParser.json());
@@ -47,7 +48,11 @@ app.use("/api/user", userRouter)
 app.use("/api/auth", authRouter)
 app.use("/api/listing", listing) 
 
+// app.use(express.static(path.join(__dirname, './frontend/dist')))
 
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, './frontend/dist/index.html'));
+// })
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500
     const message = err.message || "Internal Server Error"
