@@ -21,7 +21,7 @@ export const createListings = createAsyncThunk("data/createListings", async ({ n
     }
   
     try {
-      const response = await fetch("http://localhost:3000/api/listing/create", {
+      const response = await fetch("https://real-estate-vpkf.onrender.com/api/listing/create", {
         method: "POST",
         mode: "cors",
         credentials: 'include',
@@ -42,7 +42,7 @@ export const createListings = createAsyncThunk("data/createListings", async ({ n
 // ========================GET USER LISTING========================
 export const GetUserListing = createAsyncThunk("data/GetUserListing", async (id, { rejectWithValue }) => {
   try {
-    const response = await fetch(`http://localhost:3000/api/user/getlisting/${id}`, {
+    const response = await fetch(`https://real-estate-vpkf.onrender.com/api/user/getlisting/${id}`, {
       method: "GET",
       credentials: 'include',
       headers: {
@@ -63,7 +63,7 @@ export const GetUserListing = createAsyncThunk("data/GetUserListing", async (id,
 // ==============================DELETE LISTING==========================
 export const DeleteListing = createAsyncThunk("data/ DeleteListing", async(id,{rejectWithValue}) => {
 try {
-  const response = await fetch(`http://localhost:3000/api/listing/delete/${id}`, {
+  const response = await fetch(`https://real-estate-vpkf.onrender.com/api/listing/delete/${id}`, {
     method: "DELETE",
     mode:"cors",
     credentials: 'include',
@@ -81,7 +81,7 @@ try {
 // =======================GET SINGLE LISTING==============================
 export const FetchSingleListing = createAsyncThunk("data/FetchSingleListing", async(id,{rejectWithValue}) => {
   try {
-    const response = await fetch(`http://localhost:3000/api/listing/get/${id}`, {
+    const response = await fetch(`https://real-estate-vpkf.onrender.com/api/listing/get/${id}`, {
       method: "GET",
       mode:"cors",
       credentials: 'include',
@@ -117,7 +117,7 @@ export const UpdateSingleListing = createAsyncThunk("data/ UpdateSingleListing",
         }
   }
   try {
-    const response = await fetch(`http://localhost:3000/api/listing/update/${id}`, {
+    const response = await fetch(`https://real-estate-vpkf.onrender.com/api/listing/update/${id}`, {
       method: "PATCH",
       mode:"cors",
       credentials: 'include',

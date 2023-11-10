@@ -16,7 +16,7 @@ setFormData({...formData, [e.target.id]: e.target.value})
 e.preventDefault()
 try {
   dispatch(signInStart())
-  const response = await fetch('/api/auth/signin', {
+  const response = await fetch('https://real-estate-vpkf.onrender.com/api/auth/signin', {
     method:"POST",
     headers: {
       'Content-Type': 'application/json'

@@ -7,7 +7,7 @@ export const fetchRegister = createAsyncThunk("data/fetchRegister", async({usern
   formData.append("password", password)
   formData.append("photo", pic)
   try {
-  const response = await fetch("http://localhost:3000/api/auth/signup", {
+  const response = await fetch("https://real-estate-vpkf.onrender.com/api/auth/signup", {
       method: "POST",
       mode: "cors",
     "Content-Type": "multipart/form-data",
@@ -26,7 +26,7 @@ export const fetchRegister = createAsyncThunk("data/fetchRegister", async({usern
 // =========================DELETE USER=======================
 export const DeleteUserLoginUser = createAsyncThunk("data/ DeleteUserLoginUser", async(id,{rejectWithValue}) => {
   try {
-    const response = await fetch(`/api/user/delete/${id}`, {
+    const response = await fetch(`https://real-estate-vpkf.onrender.com/api/user/delete/${id}`, {
       method: "DELETE",
       mode: 'cors',
       credentials: 'include',
@@ -54,7 +54,7 @@ const infoStorage = () => {
 // ======================USER LOGOUT============================
 export const UserLogOut = createAsyncThunk("data/ UserLogOut ", async(_,{rejectWithValue}) => {
     try {
-      const response = await fetch(`/api/user/signout`, {
+      const response = await fetch(`https://real-estate-vpkf.onrender.com/api/user/signout`, {
         method: "Get",
         mode: 'cors',
         credentials: 'include',
