@@ -23,7 +23,6 @@ const mongo = async() => {
 }
 mongo()
 
-const __dirname = path.resolve()
 
 const myMiddleware = (req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "https://peaceful-cassata-229eca.netlify.app");
@@ -48,11 +47,7 @@ app.use("/api/user", userRouter)
 app.use("/api/auth", authRouter)
 app.use("/api/listing", listing) 
 
-app.use(express.static(path.join(__dirname, './frontend/dist')))
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './frontend/dist/index.html'));
-})
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500
     const message = err.message || "Internal Server Error"
